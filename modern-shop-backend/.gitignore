@@ -1,0 +1,16 @@
+# modern-shop-backend/.gitignore
+
+# Dependencies
+/node_modules
+
+# Environment Variables
+.env
+.env.*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production
+/build
