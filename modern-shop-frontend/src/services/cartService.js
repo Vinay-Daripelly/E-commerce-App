@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-//const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
-const API_URL = '/api/users/cart';//`${API_BASE_URL}/api/users/cart`;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const API_URL = `${API_BASE_URL}/api/users/cart`;
 
 // Create a helper function to get the auth token
 const getAuthHeaders = () => {
