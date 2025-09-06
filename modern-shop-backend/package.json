@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "build": "npm install --prefix ../modern-shop-frontend && npm run build --prefix ../modern-shop-frontend"
+    "dev": "nodemon index.js"
+
   },
   "keywords": [],
   "author": "",
