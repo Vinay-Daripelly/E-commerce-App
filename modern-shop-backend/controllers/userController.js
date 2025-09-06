@@ -60,26 +60,35 @@ const getUserCart = async (req, res) => {
   res.status(200).json(req.user.cart);
 };
 
+// controllers/userController.js
+
 const addToCart = async (req, res) => {
   const { productId, title, price, image, quantity } = req.body;
   const user = req.user;
   
   try {
+    // ADD THIS CHECK: If the user has no cart, create one.
+    if (!user.cart) {
+      user.cart = [];
+    }
+    
+    // The rest of the function remains the same
     const itemIndex = user.cart.findIndex(p => p.productId === productId);
 
     if (itemIndex > -1) {
-      // Product exists in the cart, update quantity
       user.cart[itemIndex].quantity += quantity;
     } else {
-      // Product does not exist in cart, add new item
       user.cart.push({ productId, title, price, image, quantity });
     }
     const updatedUser = await user.save();
     res.status(200).json(updatedUser.cart);
   } catch (error) {
+    console.error(error); // This logs the real error on your Render server
     res.status(500).json({ message: 'Server Error' });
   }
 };
+
+// ... make sure this function is exported
 
 const removeFromCart = async (req, res) => {
   const { productId } = req.params;

@@ -30,7 +30,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = async (product) => {
     try {
       const productData = {
-        productId: product.id,
+        productId: product._id,
         title: product.title,
         price: product.price,
         image: product.image,
