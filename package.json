@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Root package for MERN E-commerce App",
   "main": "modern-shop-backend/index.js",
+  "engines": {
+    "node": "20.11.1"
+  },
   "scripts": {
     "start": "node modern-shop-backend/index.js",
     "build": "npm install --prefix modern-shop-frontend && npm run build --prefix modern-shop-frontend"
